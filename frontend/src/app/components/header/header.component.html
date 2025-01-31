@@ -1,0 +1,39 @@
+<header class="bg-white shadow-lg">
+  <nav class="container mx-auto px-6 py-3">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center">
+        <a href="#" class="text-gray-800 text-xl font-bold">Revest Solutions</a>
+
+        <div class="hidden md:flex items-center space-x-8 ml-10">
+          <a href="#" class="text-gray-600 hover:text-gray-900">Home</a>
+          <a href="#" class="text-gray-600 hover:text-gray-900">Products</a>
+          <a href="#" class="text-gray-600 hover:text-gray-900">About</a>
+          <a href="#" class="text-gray-600 hover:text-gray-900">Contact</a>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-4">
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="Search..."
+            class="w-full px-4 py-2 text-gray-700 bg-gray-100 rounded-md focus:outline-none focus:ring-2"
+          >
+        </div>
+
+        <div class="relative">
+          <button
+            (click)="cartService.toggleCart()"
+            class="text-gray-600 hover:text-gray-900">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+            <span class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+              {{ cartService.cartCount$ | async }}
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
